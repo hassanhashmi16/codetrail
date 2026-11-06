@@ -207,7 +207,7 @@ def main() -> None:
 
     # 4) No hidden reasoning leaks into public events.
     raw = log_path.read_text(encoding="utf-8")
-    assert "You are CodeTrail's investigator" not in raw
+    assert "You are WhyTheDiff's investigator" not in raw
     assert all(len(event.message) <= 200 for event in events)
     assert all(
         set(event.data) <= {"tools", "tool_calls", "requested_tools", "grade",

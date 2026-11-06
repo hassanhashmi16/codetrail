@@ -3,7 +3,7 @@ from contextlib import contextmanager
 from contextvars import ContextVar
 from config import settings
 
-_owner = ContextVar("codetrail_owner", default=None)
+_owner = ContextVar("whythediff_owner", default=None)
 
 def data_dir():
     owner = _owner.get()

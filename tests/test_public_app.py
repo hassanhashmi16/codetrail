@@ -28,7 +28,7 @@ def store(tmp_path, monkeypatch):
 def client_for(store, owner):
     app = create_public_app(store=store, worker=IdleWorker())
     client = TestClient(app)
-    client.cookies.set('codetrail_session', store.login(owner, 'user'+owner))
+    client.cookies.set('whythediff_session', store.login(owner, 'user'+owner))
     client.headers['Origin'] = settings.app_origin
     return client
 
@@ -178,7 +178,7 @@ def test_live_events_are_sent_before_job_completion(store):
                 observed.append(store.job('1', job['id'])['status'])
                 store.finish(job['id'], report={'ok':True})
             if message['type'] == 'http.response.body' and not message.get('more_body', False): done.set()
-        scope = {'type':'http','asgi':{'version':'3.0'},'http_version':'1.1','method':'GET','scheme':'http','path':'/investigations/'+job['id']+'/events','raw_path':('/investigations/'+job['id']+'/events').encode(),'query_string':b'','root_path':'','headers':[(b'host',b'testserver'),(b'cookie',('codetrail_session='+token).encode())],'client':('127.0.0.1',1234),'server':('testserver',80)}
+        scope = {'type':'http','asgi':{'version':'3.0'},'http_version':'1.1','method':'GET','scheme':'http','path':'/investigations/'+job['id']+'/events','raw_path':('/investigations/'+job['id']+'/events').encode(),'query_string':b'','root_path':'','headers':[(b'host',b'testserver'),(b'cookie',('whythediff_session='+token).encode())],'client':('127.0.0.1',1234),'server':('testserver',80)}
         await asyncio.wait_for(app(scope, receive, send), 5)
     asyncio.run(exercise())
     assert observed == ['running']
@@ -199,7 +199,7 @@ def test_oauth_callback_uses_pkce_and_discards_provider_token(store, monkeypatch
         login = client.get('/auth/login', follow_redirects=False)
         assert 'code_challenge=' in login.headers['location']
         assert 'scope=&' in login.headers['location']
-        state = client.cookies.get('codetrail_oauth')
+        state = client.cookies.get('whythediff_oauth')
         assert client.get('/auth/callback?state=wrong&code=code').status_code == 400
         callback = client.get('/auth/callback', params={'state':state,'code':'code'}, follow_redirects=False)
         assert callback.status_code == 303

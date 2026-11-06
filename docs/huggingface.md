@@ -15,8 +15,8 @@ and recovery testing remain external steps; no live deployment is verified.
 
 1. Confirm the account already has the plan required for Docker Spaces. This
    guide does not authorize a purchase or subscription upgrade.
-2. Create a private Docker Space named `codetrail`, selecting **CPU Basic**.
-   Upload/sync the standalone CodeTrail repo source, including its README YAML
+2. Create a private Docker Space named `whythediff`, selecting **CPU Basic**.
+   Upload/sync the standalone WhyTheDiff repo source, including its README YAML
    and Dockerfile. Never upload `.env`, `data/`, `reports/`, or caches. Keep the
    Space private while configuring and testing, then make the app public.
 3. Create a **private** bucket for this app and attach it read-write at `/state`.

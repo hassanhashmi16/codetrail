@@ -1,4 +1,4 @@
-"""CodeTrail command line: run or resume an investigation.
+"""WhyTheDiff command line: run or resume an investigation.
 
     python cli.py investigate --repo URL [--ref REF] [--path FILE ...] \
         [--pull N ...] --question "..." [--thread ID]

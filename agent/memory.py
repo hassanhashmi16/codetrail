@@ -30,7 +30,7 @@ from qdrant_client.models import (
 
 from models import ClaimLabel, Contract, Report, RepoSnapshot, SourceRecord
 
-FINDINGS_COLLECTION = "codetrail_findings"
+FINDINGS_COLLECTION = "whythediff_findings"
 
 
 class Finding(Contract):

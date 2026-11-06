@@ -53,7 +53,7 @@ def create_app(service: InvestigationService | None = None) -> FastAPI:
         finally:
             app.state.service.close()
 
-    app = FastAPI(title="CodeTrail", version="0.1.0", lifespan=lifespan)
+    app = FastAPI(title="WhyTheDiff", version="0.1.0", lifespan=lifespan)
     app.state.service = service
 
     def service_of(request: Request) -> InvestigationService:

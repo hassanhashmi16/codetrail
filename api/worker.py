@@ -27,7 +27,7 @@ def public_failure(exc):
     if kind in {'OutputParserException', 'ValidationError'}:
         return 'The AI response could not be validated. Try resuming or starting a new investigation.'
     if isinstance(exc, ValueError) and str(exc) == 'only public repositories are supported':
-        return 'This repository is not public. CodeTrail supports public GitHub repositories only.'
+        return 'This repository is not public. WhyTheDiff supports public GitHub repositories only.'
     return 'The investigation could not finish. Try resuming it, or start a new run.'
 
 
@@ -71,7 +71,7 @@ class Worker:
         self.lease = portalocker.Lock(str(self.store.path)+'.worker.lock', timeout=0)
         self.lease.acquire()
         self.store.recover()
-        self.thread = threading.Thread(target=self.run, name='codetrail-worker', daemon=True)
+        self.thread = threading.Thread(target=self.run, name='whythediff-worker', daemon=True)
         self.thread.start()
 
     def close(self):

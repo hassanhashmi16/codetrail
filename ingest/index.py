@@ -57,8 +57,12 @@ def load_manifest(collection: str) -> dict | None:
     """The stored manifest for a collection, or None before the first build."""
     path = manifest_path(collection)
     if not path.exists():
-        return None
-    return json.loads(path.read_text(encoding="utf-8"))
+        from retrieval.legacy import legacy_collection_name
+        path = manifest_path(legacy_collection_name(collection))
+        if not path.exists():
+            return None
+    manifest = json.loads(path.read_text(encoding="utf-8"))
+    return {**manifest, 'collection': collection}
 
 
 def current_settings(store) -> dict:

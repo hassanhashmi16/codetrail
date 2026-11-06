@@ -33,7 +33,7 @@ function ExampleReport() {
   return (
     <div className="lp-example-stage" id="example">
       <div className="lp-example-caption"><span className="lp-eyebrow">Inside an investigation</span><span className="lp-example-number">CT / 001</span></div>
-      <article className="lp-report" aria-label="Example CodeTrail report">
+      <article className="lp-report" aria-label="Example WhyTheDiff report">
         <div className="lp-report-top"><span><GitHubIcon /> pallets<span className="lp-repo-divider">/</span><strong>flask</strong></span><span className="lp-ref">2.2.0 <span aria-hidden="true">⌁</span></span></div>
         <div className="lp-report-heading"><p className="lp-eyebrow">The question</p><h2>Why did Flask replace<br /><code>LocalStack</code>?</h2></div>
         <div className="lp-tabs" role="tablist" aria-label="Explore the example report" onKeyDown={switchWithKeys}>
@@ -72,7 +72,7 @@ export default function LandingPage({ checkingSession }) {
     <div className="lp-page">
       <a className="skip-link" href="#lp-main">Skip to content</a>
       <header className="lp-nav">
-        <a href="#" className="lp-brand" aria-label="CodeTrail home"><span className="lp-brand-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M10 8v16m0-8h7a6 6 0 0 0 6-6V8" stroke="currentColor" strokeWidth="1.5" /><circle cx="10" cy="7" r="3" /><circle cx="10" cy="25" r="3" /><circle cx="23" cy="7" r="3" /></svg></span>CodeTrail<span className="lp-brand-period">.</span></a>
+        <a href="#" className="lp-brand" aria-label="WhyTheDiff home"><span className="lp-brand-symbol" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M10 8v16m0-8h7a6 6 0 0 0 6-6V8" stroke="currentColor" strokeWidth="1.5" /><circle cx="10" cy="7" r="3" /><circle cx="10" cy="25" r="3" /><circle cx="23" cy="7" r="3" /></svg></span>WhyTheDiff<span className="lp-brand-period">.</span></a>
         <nav aria-label="Main navigation"><a href="#how-it-works">How it works</a><a href="#example">Example report</a><SignIn checking={checkingSession} compact /></nav>
       </header>
 
@@ -93,7 +93,7 @@ export default function LandingPage({ checkingSession }) {
           <div className="lp-section-heading"><p className="lp-eyebrow">A trail, not a guess</p><h2 id="lp-method-title">From a question to the record.</h2><p>The explanation is only as useful as the evidence behind it.</p></div>
           <div className="lp-steps">
             <article><span className="lp-step-number">01 <span aria-hidden="true">↗</span></span><h3>Bring a repository.</h3><p>Paste a public GitHub link and ask about a design decision. Add a file or revision to narrow the search.</p><span className="lp-step-detail">A question with a starting point</span></article>
-            <article><span className="lp-step-number">02 <span aria-hidden="true">↗</span></span><h3>Follow the connections.</h3><p>CodeTrail follows the code through commits, pull requests, and discussions to find the recorded reasoning.</p><span className="lp-step-detail">Code → history → context</span></article>
+            <article><span className="lp-step-number">02 <span aria-hidden="true">↗</span></span><h3>Follow the connections.</h3><p>WhyTheDiff follows the code through commits, pull requests, and discussions to find the recorded reasoning.</p><span className="lp-step-detail">Code → history → context</span></article>
             <article><span className="lp-step-number">03 <span aria-hidden="true">↗</span></span><h3>Read. Inspect. Revisit.</h3><p>Get a cited explanation and timeline. Open the evidence, see the limits, and return to your saved report.</p><span className="lp-step-detail">An explanation you can examine</span></article>
           </div>
         </section>
@@ -103,7 +103,7 @@ export default function LandingPage({ checkingSession }) {
         <section className="lp-final-cta"><div><p className="lp-eyebrow">Your next rabbit hole, with a map</p><h2>Start with “why?”</h2><p>Your investigations and saved reports stay in your account.</p></div><SignIn checking={checkingSession} /></section>
       </main>
 
-      <footer className="lp-footer"><span>CodeTrail <span aria-hidden="true">/</span> Trace the decisions.</span><div><a href="https://github.com/hassanhashmi16/codetrail" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a><details><summary>Privacy & access</summary><p>Sign-in does not request private-repository access. Your questions and public source excerpts are sent to the configured AI provider. Saved reports are private to your account; the server operator can access the underlying storage. Open your account menu → Your data to see this server’s expiry policy or delete your account. Shared usage limits apply.</p></details></div></footer>
+      <footer className="lp-footer"><span>WhyTheDiff <span aria-hidden="true">/</span> Trace the decisions.</span><div><a href="https://github.com/hassanhashmi16/whythediff" target="_blank" rel="noreferrer">View source <span aria-hidden="true">↗</span></a><details><summary>Privacy & access</summary><p>Sign-in does not request private-repository access. Your questions and public source excerpts are sent to the configured AI provider. Saved reports are private to your account; the server operator can access the underlying storage. Open your account menu → Your data to see this server’s expiry policy or delete your account. Shared usage limits apply.</p></details></div></footer>
     </div>
   )
 }

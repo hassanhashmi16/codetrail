@@ -1,4 +1,4 @@
-"""CodeTrail's shared contracts: request -> evidence -> claims -> report.
+"""WhyTheDiff's shared contracts: request -> evidence -> claims -> report.
 
 Every layer imports these classes instead of inventing its own shapes. That
 is what keeps a ``source_id`` meaningful from the collector (Steps 4-5),

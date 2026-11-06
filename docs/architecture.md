@@ -1,6 +1,6 @@
-# CodeTrail — Architecture
+# WhyTheDiff — Architecture
 
-**Trace the decisions behind the code.** CodeTrail accepts a public GitHub
+**Trace the decisions behind the code.** WhyTheDiff accepts a public GitHub
 repository link and a question, follows the relevant code, history, and
 discussions, and returns a cited explanation with a timeline and an explicit
 unknown list. Findings are labelled **documented**, **inferred**, or treated as
@@ -106,7 +106,7 @@ there. Here the **math and plumbing** moved into libraries; the **policy**
 |---|---|---|
 | Source cache | `data/cache/` | every fetched `SourceRecord`, keyed by stable ID (diskcache) |
 | Vector index | `data/qdrant/` | one collection per repository@SHA (dense + sparse) |
-| Findings | `data/qdrant/` (`codetrail_findings`) | validated claims + source refs, repo/SHA-scoped |
+| Findings | `data/qdrant/` (`whythediff_findings`) | validated claims + source refs, repo/SHA-scoped |
 | Checkpoints | `data/checkpoints.sqlite` | LangGraph state per thread (resume) |
 | Traces | `data/traces/<thread>.jsonl` | public progress events per run |
 | Reports | `reports/` | finished `Report` JSON files |

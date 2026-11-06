@@ -1,10 +1,10 @@
-# CodeTrail: reference repository and demo cases
+# WhyTheDiff: reference repository and demo cases
 
 **Step 1 completed:** 16 October 2026.
 
 ## Why we selected a repository
 
-CodeTrail's product input is **a public GitHub repository link and a question**. The repository below supplies manually verified examples for development and demonstrations. Repository identity comes from each request; it is not a fixed application setting.
+WhyTheDiff's product input is **a public GitHub repository link and a question**. The repository below supplies manually verified examples for development and demonstrations. Repository identity comes from each request; it is not a fixed application setting.
 
 Before automating an investigation, we need to know what a good answer looks like. Otherwise, a convincing explanation could be completely wrong without us noticing. These cases give us two supported explanations and one question the inspected evidence cannot settle.
 
@@ -30,7 +30,7 @@ This is a small evidence-quality check, not an exhaustive comparison of the proj
 | Commit timestamp from GitHub metadata | `2022-08-02T00:12:09Z` |
 | Checked | 16 October 2026 |
 
-The [release page](https://github.com/pallets/flask/releases/tag/2.2.0) identifies the short commit `b17bb9e`; GitHub's [commit endpoint](https://api.github.com/repos/pallets/flask/commits/2.2.0) resolved the full SHA above. This historical snapshot contains both selected changes. It is source material to inspect, not a Flask dependency to install for CodeTrail.
+The [release page](https://github.com/pallets/flask/releases/tag/2.2.0) identifies the short commit `b17bb9e`; GitHub's [commit endpoint](https://api.github.com/repos/pallets/flask/commits/2.2.0) resolved the full SHA above. This historical snapshot contains both selected changes. It is source material to inspect, not a Flask dependency to install for WhyTheDiff.
 
 Source was inspected through the `2.2.0` raw-file URLs below; the JSON-provider source was also available through its full-SHA URL. Keep the full SHA as the future collector's input. Direct SHA-addressed retrieval of some other files was unavailable through the research browser, so the checked tag-to-SHA mapping is recorded explicitly rather than claiming every canonical file URL was fetched.
 
@@ -151,7 +151,7 @@ Accepting another public Python repository uses this same flow. The variable wor
 - Created this reference document; application collection, indexing, and automated evaluation will be implemented in their planned steps.
 
 ```text
-Project-4-CodeTrail/
+Project-4-WhyTheDiff/
   STEPS.md             # execution plan and current progress
   docs/
     demo-cases.md      # this reference corpus, questions, and expected findings

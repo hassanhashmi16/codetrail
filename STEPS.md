@@ -1,4 +1,4 @@
-# Project 4: CodeTrail — Build Plan
+# Project 4: WhyTheDiff — Build Plan
 
 > **Trace the decisions behind the code.**
 >
@@ -8,7 +8,7 @@
 
 ## The project
 
-Reading code shows its current behavior. Explaining why a design exists often requires tracing a change through commits, pull requests, and issues. CodeTrail follows that evidence and produces a cited explanation with an interactive timeline.
+Reading code shows its current behavior. Explaining why a design exists often requires tracing a change through commits, pull requests, and issues. WhyTheDiff follows that evidence and produces a cited explanation with an interactive timeline.
 
 **Input:** a user-supplied public GitHub repository URL, a question, and optional file path and ref. The intended interface accepts different public repositories within the supported scope. We develop against file-scoped examples in one reference Python repository, while keeping the readers and agent repository-independent.
 
@@ -30,7 +30,7 @@ Follow the teaching approach of [Project 2](../Project-2-RAG-Assistant/STEPS.md)
 
 ## Familiar concepts, new tools
 
-| What we built earlier | CodeTrail approach |
+| What we built earlier | WhyTheDiff approach |
 |---|---|
 | Custom parsing and chunking | LangChain Documents and language-aware text splitters |
 | Direct embedding calls and vector SQL | Google embedding integration and Qdrant vector-store integration |
@@ -98,7 +98,7 @@ Reranking or cloud tracing that is unavailable must be labelled accordingly. Sav
 Files appear when their corresponding step is implemented.
 
 ```text
-Project-4-CodeTrail/
+Project-4-WhyTheDiff/
   STEPS.md
   README.md
   config.py
@@ -305,7 +305,7 @@ Project-4-CodeTrail/
 
 **Check:** A demo question follows a real multi-hop trail and produces the shared report format.
 
-**Structure:** LangGraph takes over Project 3's custom loop; our nodes express CodeTrail's investigation strategy.
+**Structure:** LangGraph takes over Project 3's custom loop; our nodes express WhyTheDiff's investigation strategy.
 
 **Completed:** 16 October 2026. Added `agent/nodes.py` (investigate, tool execution with call counting and state sync, evidence grading, conditional routing, synthesis over gathered evidence) and `agent/graph.py` (StateGraph: investigate, tools, grade, investigate-or-synthesize), extended the state with `messages` (add_messages), `evidence_sufficient`, and `investigation_rounds`, added PR leads to `read_change`, and added `console.py` for Windows-safe output. Findings during the check: Groq rejects a prose reply in tool-choice mode, so the grader prompt now forbids answering and a grader failure degrades to "proceed" with a note; tool results reached the collector but not the graph state, so the tools node now syncs sources into state (the explicit trail); model quotes that drop markdown backticks are located formatting-insensitively while the stored quote is replaced by the exact source span (paraphrases still fail). Check: the LocalStack question followed a two-step trail (search_evidence then read_discussion), graded sufficient, synthesized a complete report (1 documented claim, verbatim citation against 5 inspected sources), saved and reloaded; a Windows cp1252 print crash on model punctuation was fixed by the console helper. Live Groq calls for decisions, grading, and synthesis; embeddings, search, and reranking stayed local.
 
@@ -393,7 +393,7 @@ Project-4-CodeTrail/
 
 **Completed:** 16 October 2026. Added `eval/cases.jsonl` (three verified cases: two documented/multi-hop, one unknown/misleading-evidence; split dev/held-out), `eval/run_eval.py` (both workflows on the same snapshot, model settings, and report contract; metered calls/tokens; per-case rationale, citation, unknown-handling, latency, and evidence metrics; shared-index disclosure; findings reset; per-case reports saved for later Ragas scoring), and a focused pytest suite (15 tests covering claim rules, citation acceptance/rejection, markdown-tolerant repair, budgets, repeated actions, and thread persistence). Fixed two bugs the tests caught (boundary backticks in tolerant quote location; a missing `repo_slug` import in persistence) and added a retry for Groq's `tool_use_failed` structured-output quirk. Check: all three cases ran through both workflows. Baseline: 1 call, 8-21 s. Investigation: 7-12 calls, 58-134 s. On ct-002 the baseline dropped a claim on a citation error while the investigation completed cleanly; on ct-003 (unknown) both returned zero claims with unresolved items; on ct-001 both answered correctly (investigation partial with one claim). The failed check is printed and saved, not averaged. Ragas faithfulness is deferred; the saved per-case reports make it runnable later without re-spending calls.
 
-#### Step 17: Serve CodeTrail through FastAPI [done]
+#### Step 17: Serve WhyTheDiff through FastAPI [done]
 
 **What:** Expose the existing investigation runner, saved reports, resume, and progress streaming.
 
@@ -455,7 +455,7 @@ Public hosting follows the roadmap's application guardrails (Step 39), Docker (S
 
 ## Pitfalls to keep visible
 
-| Pitfall | What CodeTrail should do |
+| Pitfall | What WhyTheDiff should do |
 |---|---|
 | Related text mistaken for the actual reason | Verify the code/change/discussion relationship and support for the claim |
 | Wrong snapshot or stale memory | Filter by repository/SHA and revalidate saved evidence |
@@ -470,7 +470,7 @@ Public hosting follows the roadmap's application guardrails (Step 39), Docker (S
 
 ## Theory summary
 
-CodeTrail reconstructs explanations from a verifiable trail. Retrieval discovers passages; historical relationships connect them; the graph decides what to inspect next. More searching earns its cost only when it resolves a real gap. A useful result explains both what the evidence establishes and what remains uncertain.
+WhyTheDiff reconstructs explanations from a verifiable trail. Retrieval discovers passages; historical relationships connect them; the graph decides what to inspect next. More searching earns its cost only when it resolves a real gap. A useful result explains both what the evidence establishes and what remains uncertain.
 
 ## Research and implementation references
 

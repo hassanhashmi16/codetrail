@@ -1,4 +1,4 @@
-"""CodeTrail's settings: one validated boundary between the environment and app.
+"""WhyTheDiff's settings: one validated boundary between the environment and app.
 
 Project 3 read os.getenv values directly. Pydantic Settings now loads .env,
 converts types, and rejects invalid values. Importing this file makes no network
@@ -33,7 +33,7 @@ class Settings(BaseSettings):
     cohere_api_key: SecretStr = Field(default=SecretStr(""), repr=False)
     langsmith_api_key: SecretStr = Field(default=SecretStr(""), repr=False)
     langsmith_tracing: bool = False
-    langsmith_project: str = "codetrail"
+    langsmith_project: str = "whythediff"
 
     # Explicit defaults checked against provider docs on 16 October 2026.
     # These are configuration choices, not a claim of tested account access.
@@ -109,7 +109,7 @@ class Settings(BaseSettings):
                 raise ValueError("PUBLIC_APP requires GitHub OAuth client credentials")
         self.app_origin = self.app_origin.rstrip("/")
         # Joining an absolute override keeps that absolute path; a relative one
-        # is anchored to CodeTrail, so changing the shell's cwd changes nothing.
+        # is anchored to WhyTheDiff, so changing the shell's cwd changes nothing.
         self.data_dir = (BASE_DIR / self.data_dir).resolve()
         self.reports_dir = (BASE_DIR / self.reports_dir).resolve()
         return self

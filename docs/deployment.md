@@ -1,4 +1,4 @@
-# Public CodeTrail application
+# Public WhyTheDiff application
 
 This release supports public registration with GitHub, account-private reports
 and findings, a durable investigation queue, and live progress. It is designed
@@ -53,9 +53,9 @@ public source excerpts are sent to the configured model provider.
 
 ## Configure sign-in
 
-1. Choose the final HTTPS origin, for example `https://codetrail.example.com`.
+1. Choose the final HTTPS origin, for example `https://whythediff.example.com`.
 2. Register a GitHub **OAuth app**, with that homepage and the callback
-   `https://codetrail.example.com/auth/callback`.
+   `https://whythediff.example.com/auth/callback`.
 3. Set `APP_ORIGIN`, `OAUTH_CLIENT_ID`, `OAUTH_CLIENT_SECRET`, and `GROQ_API_KEY`
    in the deployment's secret/environment settings. Set `GITHUB_TOKEN` to a
    public-read-only token for useful GitHub API capacity.
@@ -75,7 +75,7 @@ From the project directory, configure the environment values above, then:
 
 ```powershell
 docker compose up --build -d
-docker compose logs -f codetrail
+docker compose logs -f whythediff
 ```
 
 The multi-stage Dockerfile builds React and serves the bundle through FastAPI.
@@ -161,7 +161,7 @@ durability, auth, and worker recovery checks are also still required.
 - [Hugging Face Spaces](https://huggingface.co/docs/hub/spaces-overview)
   labels CPU Basic hardware (2 CPU, 16 GB RAM) free of hourly hardware charges,
   but requires a paid plan to create a new Docker Space. The previous claim
-  that CodeTrail could launch there with no subscription cost was incorrect.
+  that WhyTheDiff could launch there with no subscription cost was incorrect.
   Default disk is ephemeral and free hardware sleeps. Its
   [storage buckets](https://huggingface.co/docs/hub/en/spaces-storage) provide
   a persistence mechanism, but that does not establish compatibility with this

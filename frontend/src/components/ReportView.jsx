@@ -7,7 +7,7 @@ function exportReport(report, threadId) {
   const url = URL.createObjectURL(blob)
   const anchor = document.createElement('a')
   anchor.href = url
-  anchor.download = `codetrail-${threadId || 'report'}.json`
+  anchor.download = `whythediff-${threadId || 'report'}.json`
   anchor.click()
   URL.revokeObjectURL(url)
 }

@@ -400,7 +400,7 @@ diskcache==5.6.3 \
     --hash=sha256:5e31b2d5fbad117cc363ebaf6b689474db18a1f6438bc82358b024abd4c2ca19
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 distro==1.9.0 \
     --hash=sha256:2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed \
     --hash=sha256:7bffd925d65168f85027d8da9af6bddab658135b840670a223589bc0c8ef02b2
@@ -413,7 +413,7 @@ fastapi==0.143.2 \
     --hash=sha256:e9e6d97018dcfd748da7d9e7c61cedefbe9eb91b1a3288e45b13fbae76df2d54
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 fastavro==1.13.1 \
     --hash=sha256:01810229c86dcec75da8cc08f18f509e7a1883681c5c83c69f85589998440624 \
     --hash=sha256:045af8ab8fec214e3ff6241fed32c5124582888d5dce1da3ef3fa48629bd25b2 \
@@ -463,7 +463,7 @@ fastembed==0.9.0 \
     --hash=sha256:bc3beadb46ecb3580ab832d12670be7ecb937f80adfcb7b77b03f7eef76c394a
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 filelock==4.2.0 \
     --hash=sha256:2ff5690882e8cdb00ef31fb3d01a3094c29f30985426c59495afb1733f3b7238 \
     --hash=sha256:7a60906c75227cf04d0c273afadc8219400f11aeb13cc69591d4f6cdc6c8036e
@@ -651,7 +651,7 @@ httpx==0.28.1 \
     --hash=sha256:d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
     #   cohere
     #   groq
     #   huggingface-hub
@@ -703,13 +703,13 @@ langchain-cohere==0.6.0 \
     --hash=sha256:5e45b56d0a5cc6f3de9f61bcd4fd449b9f3ece85e6b569c3d7c304992808bb0c
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 langchain-core==1.6.11 \
     --hash=sha256:0036e7cc6c6be6eac28970bd7e46df5d2b5da9cced583507a5ffcda2ec57a401 \
     --hash=sha256:1ae4133bba30fb14100f74718ea7458cb6134d135704977354f8f178d561122a
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
     #   langchain-cohere
     #   langchain-google-genai
     #   langchain-groq
@@ -724,13 +724,13 @@ langchain-google-genai==3.2.0 \
     --hash=sha256:689fc159d4623a184678e24771f6d52373e983a8fc8d342e44352aaf28e9445d
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 langchain-groq==1.1.3 \
     --hash=sha256:890c099a55526bceafc3e696d123cb9d36464c6664a3ead34ae6e09e0d50caeb \
     --hash=sha256:a69bb8212b7a699f407c033bf41ca526db8de68f438d51a41740a72bf6dc09bf
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 langchain-protocol==0.0.19 \
     --hash=sha256:4cdf879a492a35980fd859ae792d3c65458ccaae504e183c9a10d7eac1f0720f \
     --hash=sha256:79d90a1425122ac87e8052e2ec054fbd09c3edbf341bdfb6397112a495c7bf8c
@@ -743,19 +743,19 @@ langchain-qdrant==1.1.0 \
     --hash=sha256:546c5c9aa57f543dbcee07343f730c331e4ec2af2ec55b541010af08d872bf35
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 langchain-text-splitters==1.1.3 \
     --hash=sha256:50edeb318b3be6a6308dddd7d616ab82823a9ccbea59a9c14c58a7b91df60295 \
     --hash=sha256:929b6c76f99d611a5b1d8f5591ef302909b86a436ceb3217034d24e4757868d8
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 langgraph==1.2.15 \
     --hash=sha256:6e1611c4dad33d933b8cf21a91db73285221e67508feb2db5a0397af55fb838f \
     --hash=sha256:bebcfe5369b7307de1369ac00775f6e7b5a64ec94c050896b67de69d98aac612
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 langgraph-checkpoint==4.3.0 \
     --hash=sha256:bedfafe2f997ded60e4fa593e79f56f436a6e45586392dc382aa810d0c751c64 \
     --hash=sha256:c75965d84cc2c1d549163e910a15bcb577758001b141619d05297c463280b018
@@ -769,7 +769,7 @@ langgraph-checkpoint-sqlite==3.1.2 \
     --hash=sha256:4e3f376fa6f192d6ad2a1a4643b039986f1593552ef870e9e45281575de6fbf2
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 langgraph-prebuilt==1.1.1 \
     --hash=sha256:f1b1a4772e7f9f15ba736411aad3877183ad40cd9349748df76bd2b9f58a83c7 \
     --hash=sha256:fae17c22562e501940eb7aa052a15c58a431febbabf33f8ad172e1b44354a7e4
@@ -787,7 +787,7 @@ langsmith==0.14.9 \
     --hash=sha256:e54c41dcc06cbad971364fe5ecaaf976c11b418bdd0a125f816e2534c6caf2f2
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
     #   langchain-core
 loguru==0.7.3 \
     --hash=sha256:19480589e77d47b8d85b2c827ad95d49bf31b0dcde16593892eb51dd18706eb6 \
@@ -1288,7 +1288,7 @@ portalocker==3.2.0 \
     --hash=sha256:3cdc5f565312224bc570c49337bd21428bba0ef363bbcf58b9ef4a9f11779968
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
     #   qdrant-client
 proto-plus==1.29.0 \
     --hash=sha256:8acd070469a7aaf43f440b022ef9757c8cac1a9f866e933f59ae98669ddc6c8b \
@@ -1397,7 +1397,7 @@ pydantic==2.14.1 \
     --hash=sha256:94f478203dd03404682a1ada216965651dd74b1d2d5ffd62e00e0837caab5c26
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
     #   cohere
     #   fastapi
     #   groq
@@ -1556,13 +1556,13 @@ pydantic-settings==2.16.0 \
     --hash=sha256:7e73acf7f61936a15e5a3b6eedaea29f133357faf7272f2607ba479b049dd7f2
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 pygithub==2.10.0 \
     --hash=sha256:192ada2a76e4afc7d6b37e500c9bfeba1731e6506697445a5ba1c4af8bf0b924 \
     --hash=sha256:90ff24ef1cd1bd57124c2a3869cafee9d7b066909129ecdaba2c2d1903bc118d
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 pyjwt==2.15.1 \
     --hash=sha256:42d59d631f7768a1028a64c7ff581a9bf7519804daf91fc5b6c56e30eec5e193 \
     --hash=sha256:4f259e80cdfb6b3fc18a7de51fd1ef9ec79652f25019bae68975ca2468a34df8
@@ -1687,7 +1687,7 @@ qdrant-client==1.19.1 \
     --hash=sha256:fca1a96c3f90f5fff853f6ee6877838a5768a04c963df9891a655a63313af8a0
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
     #   langchain-qdrant
 requests==2.34.2 \
     --hash=sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0 \
@@ -1727,7 +1727,7 @@ sse-starlette==3.5.0 \
     --hash=sha256:75de713aa8a9441513cc283220826da079d982770965b951e9437720e8bafdb2
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 starlette==1.8.0 \
     --hash=sha256:1565dc0b35d5737a271ed1e0e04e949f4e81198799f216d2667b0a0fb9cf9522 \
     --hash=sha256:dfdd6b29c26483288088d990eee59631dedadd66ce20d203402a7ca8e3c4656f
@@ -1937,7 +1937,7 @@ uvicorn==0.54.0 \
     --hash=sha256:a2e33cbfaa0306f8e6b0c13e0cb89d7d7a2da3e62b90c66e18c33d9807b28620
     # via
     #   -c requirements.lock
-    #   codetrail (pyproject.toml)
+    #   whythediff (pyproject.toml)
 websockets==16.1.1 \
     --hash=sha256:01fbdcbac298efe19360b94bc0039c8f746f0220ba570f327577bfee81059175 \
     --hash=sha256:024193f8551a2b0eafbdd160911012c4e6c228c28430c84433253299a9e42d6a \

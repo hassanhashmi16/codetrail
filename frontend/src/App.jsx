@@ -218,7 +218,7 @@ export default function App() {
           </div>
         </section>
       </main>
-      <footer className="ws-footer"><span>CodeTrail / Trace the decisions.</span><span>Public sources. Inspectable findings.</span></footer>
+      <footer className="ws-footer"><span>WhyTheDiff / Trace the decisions.</span><span>Public sources. Inspectable findings.</span></footer>
     </div>
     {drawer && <EvidenceDrawer evidence={drawer} onClose={() => setDrawer(null)} />}
     {dataControls && <DataControls retentionDays={retentionDays} onClose={() => setDataControls(false)} />}

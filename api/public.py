@@ -23,7 +23,7 @@ from api.privacy import delete_account
 from api.worker import Worker
 from config import BASE_DIR, settings
 
-COOKIE = 'codetrail_session'
+COOKIE = 'whythediff_session'
 TERMINAL = {'completed', 'failed', 'interrupted'}
 
 class DeleteAccountIn(BaseModel):
@@ -48,7 +48,7 @@ def create_public_app(*, store=None, worker=None):
         finally:
             worker.close()
 
-    app = FastAPI(title='CodeTrail', lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
+    app = FastAPI(title='WhyTheDiff', lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
     app.state.store = store
     secure = settings.app_origin.startswith('https://')
 
@@ -88,7 +88,7 @@ def create_public_app(*, store=None, worker=None):
     def user(request):
         account = store.user(request.cookies.get(COOKIE))
         if not account:
-            raise HTTPException(401, 'Sign in with GitHub to use CodeTrail')
+            raise HTTPException(401, 'Sign in with GitHub to use WhyTheDiff')
         return account
 
     def owned(request, identifier):
@@ -133,12 +133,12 @@ def create_public_app(*, store=None, worker=None):
         challenge = base64.urlsafe_b64encode(hashlib.sha256(verifier.encode()).digest()).decode().rstrip('=')
         params = {'client_id': settings.oauth_client_id, 'redirect_uri': settings.app_origin+'/auth/callback', 'state': state, 'scope': '', 'code_challenge': challenge, 'code_challenge_method': 'S256'}
         response = RedirectResponse('https://github.com/login/oauth/authorize?'+urlencode(params))
-        response.set_cookie('codetrail_oauth', state, max_age=600, httponly=True, secure=secure, samesite='lax', path='/auth')
+        response.set_cookie('whythediff_oauth', state, max_age=600, httponly=True, secure=secure, samesite='lax', path='/auth')
         return response
 
     @app.get('/auth/callback')
     async def callback(request: Request, code: str = '', state: str = ''):
-        cookie = request.cookies.get('codetrail_oauth', '')
+        cookie = request.cookies.get('whythediff_oauth', '')
         if not state or len(state) > 100 or not cookie or not secrets.compare_digest(state, cookie):
             raise HTTPException(400, 'Invalid sign-in state. Please sign in again.')
         verifier = store.consume_oauth(state)
@@ -163,7 +163,7 @@ def create_public_app(*, store=None, worker=None):
             raise HTTPException(502, 'GitHub sign-in failed. Please try again.') from None
         response = RedirectResponse('/', status_code=303)
         response.set_cookie(COOKIE, session, max_age=settings.session_hours*3600, httponly=True, secure=secure, samesite='lax')
-        response.delete_cookie('codetrail_oauth', path='/auth')
+        response.delete_cookie('whythediff_oauth', path='/auth')
         return response
 
     @app.post('/auth/logout')

@@ -1,6 +1,6 @@
 """Readers for discussion evidence: PRs, issues, conversation comments, and reviews.
 
-These readers answer the "why" side of CodeTrail: a code change shows *what*
+These readers answer the "why" side of WhyTheDiff: a code change shows *what*
 happened, the discussion shows the stated reason. Everything is SHA-scoped to
 the snapshot and normalized into ``SourceRecord``s with stable IDs, PR state
 ("merged" vs "proposed"), edit markers, and relationships back to the parent

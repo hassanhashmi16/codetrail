@@ -1,4 +1,4 @@
-"""Graph nodes: CodeTrail's investigation strategy as state transitions.
+"""Graph nodes: WhyTheDiff's investigation strategy as state transitions.
 
 Each node reads the shared state and returns only what it changes. The model
 decides *which* tool to call; the graph decides *when* the investigation is
@@ -34,7 +34,7 @@ from retrieval.search import search_evidence as run_search
 MIN_TOOL_CALLS = 2
 MAX_INVESTIGATION_ROUNDS = 8
 
-INVESTIGATOR_PROMPT = """You are CodeTrail's investigator, tracing why a code
+INVESTIGATOR_PROMPT = """You are WhyTheDiff's investigator, tracing why a code
 change happened in a pinned repository snapshot.
 
 Follow the investigation path:

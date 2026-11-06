@@ -74,13 +74,20 @@ def build_embeddings() -> Embeddings:
 
 def open_qdrant() -> QdrantClient:
     """The local on-disk vector store. One process owns it at a time."""
-    return QdrantClient(path=str(data_dir() / "qdrant"))
+    from retrieval.legacy import expose_legacy_collections
+    client = QdrantClient(path=str(data_dir() / "qdrant"))
+    try:
+        expose_legacy_collections(client)
+    except Exception:
+        client.close()
+        raise
+    return client
 
 
 def collection_name(snapshot: RepoSnapshot) -> str:
     """One collection per repository@snapshot; Qdrant-safe characters only."""
     slug = repo_slug(snapshot.repository).replace("/", "_")
-    return re.sub(r"[^0-9a-zA-Z_-]", "_", f"codetrail_{slug}_{snapshot.sha[:12]}").lower()
+    return re.sub(r"[^0-9a-zA-Z_-]", "_", f"whythediff_{slug}_{snapshot.sha[:12]}").lower()
 
 
 def ensure_collection(client: QdrantClient, embeddings: Embeddings, collection: str) -> None:

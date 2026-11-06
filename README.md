@@ -1,5 +1,5 @@
 ---
-title: CodeTrail
+title: WhyTheDiff
 emoji: 🔎
 colorFrom: green
 colorTo: gray
@@ -7,19 +7,19 @@ sdk: docker
 app_port: 8000
 ---
 
-# CodeTrail
+# WhyTheDiff
 
 **Trace the decisions behind the code.**
 
 Deployment: [public app operations](docs/deployment.md) ·
 [Hugging Face setup (paid plan required)](docs/huggingface.md).
 
-CodeTrail accepts a public GitHub repository link and a question, follows the
+WhyTheDiff accepts a public GitHub repository link and a question, follows the
 relevant code, history, and discussions, and returns a cited explanation with a
 timeline. Every claim is labelled **documented**, **inferred**, or left
 **unresolved**, and every cited quote is checked against its stored source.
 
-Reading code shows *what* it does. CodeTrail reconstructs *why* it changed.
+Reading code shows *what* it does. WhyTheDiff reconstructs *why* it changed.
 
 ## Status
 
